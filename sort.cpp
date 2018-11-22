@@ -167,11 +167,11 @@ int partition(vector<int> &data, int left, int right) {
 
       while (true) {
 
-            while (data.at(i) < pivot && i < right) {
+            while (data.at(i) < pivot) {
                   i++;
             }
 
-            while (data.at(j) > pivot && j > left) {
+            while (data.at(j) > pivot) {
                   j--;
             }
 
@@ -180,6 +180,8 @@ int partition(vector<int> &data, int left, int right) {
             }
 
             swap(data[i], data[j]);
+            i++;
+            j--;
       }
 
       return 0;
